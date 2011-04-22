@@ -59,11 +59,23 @@ get "/clearRectangles" do
   "deleted all rectangles"
 end
 
+
+# display the web form for creating a rectangle
 get "/newRectangle" do
   output = ""
+  
+  # we're going to submit the form to the same URL
+  # as from Processing using the same verb
   output += '<form action="/returnRectangles" method="GET">'
+  
+  # the 'name' of the input translates into where the variable
+  # ends up in the params in our other action
+  # an input with name="x" becomes params[:x]
   output += '<p><label>x:</label> <input type="text" name="x" /></p>'
   output += '<p><label>y:</label> <input type="text" name="y" /></p>'
+  
+  # an input of type "submit" becomes a submit button for sending
+  # in the form
   output += '<p><input type="submit" value="create" /></p>'
   output += '</form>'
   output
