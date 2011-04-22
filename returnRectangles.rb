@@ -64,7 +64,7 @@ get "/newRectangle" do
   output += '<form action="/returnRectangles" method="GET">'
   output += '<p><label>x:</label> <input type="text" name="x" /></p>'
   output += '<p><label>y:</label> <input type="text" name="y" /></p>'
-  output += '<p><input type="submit" value="submit" /></p>'
+  output += '<p><input type="submit" value="create" /></p>'
   output += '</form>'
   output
 end
