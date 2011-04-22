@@ -21,6 +21,13 @@ class Rectangle
   property :y,      Integer
 end
 
+get "/clearRectangles" do
+  for rectangle in Rectangle.all
+    rectangle.destroy
+  end
+  "deleted all rectangles"
+end
+
 # Define a route for the webserver for a get request
 get "/returnRectangles" do
 
