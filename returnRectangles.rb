@@ -21,13 +21,6 @@ class Rectangle
   property :y,      Integer
 end
 
-get "/clearRectangles" do
-  for rectangle in Rectangle.all
-    rectangle.destroy
-  end
-  "deleted all rectangles"
-end
-
 # Define a route for the webserver for a get request
 get "/returnRectangles" do
 
@@ -56,5 +49,22 @@ get "/returnRectangles" do
 HTML
   end
   # Send output back out as a response to the web request
+  output
+end
+
+get "/clearRectangles" do
+  for rectangle in Rectangle.all
+    rectangle.destroy
+  end
+  "deleted all rectangles"
+end
+
+get "/newRectangle" do
+  output = ""
+  output += '<form action="/returnRectangles" method="GET">'
+  output += '<p><label>x:</label> <input type="text" name="x" /></p>'
+  output += '<p><label>y:</label> <input type="text" name="y" /></p>'
+  output += '<p><input type="submit" value="submit" /></p>'
+  output += '</form>'
   output
 end
