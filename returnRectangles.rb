@@ -66,6 +66,8 @@ get "/newRectangle" do
   
   # we're going to submit the form to the same URL
   # as from Processing using the same verb
+  # the "action" sets the url this form will go to
+  # the "method" sets the verb
   output += '<form action="/returnRectangles" method="GET">'
   
   # the 'name' of the input translates into where the variable
